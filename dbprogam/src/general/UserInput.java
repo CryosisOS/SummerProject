@@ -45,7 +45,7 @@ public class UserInput
             {
                 out.print("This is not an integer please try again.\n");
             }
-        }while(isValid);
+        }while(!isValid);
         return userInput;
     }//END getInteger
     
@@ -66,6 +66,7 @@ public class UserInput
         /// DEFINEMENT OF METHOD
         do
         {
+            isValid =false;
             out.print(prompt);
             sc.reset();
             userInput = sc.nextLine();
@@ -77,7 +78,7 @@ public class UserInput
             {
                 out.print("This is an invalid input, please try again.\n");
             }//ENDIF
-        }while(isValid);
+        }while(!isValid);
         return userInput;
     }//END getString
 }//END class UserInput
