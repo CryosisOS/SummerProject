@@ -44,13 +44,16 @@ public class MainMenu
             switch(option)
             {
                 case 1:
-                    useCurrentTables(); //Write method
+                    useCurrentTables();
+                    isNotValid = false;
                     break;
                 case 2:
                     updateCurrentTables(prevTable, curTable);
+                    isNotValid = false;
                     break;
                 case 3:
-                    updateBothTables(); //Write method.
+                    updateBothTables();
+                    isNotValid = false;
                     break;
                 default:
                     out.print("\nThis is an invalid option. Please try again.\n");

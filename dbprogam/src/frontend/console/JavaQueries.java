@@ -14,5 +14,6 @@ public class JavaQueries
     public static void continueToQueries()
     {
         /* Under Development */
+        System.out.println("Got here successfully.");
     }//END continueToQueries
 }//END class JavaQueries
