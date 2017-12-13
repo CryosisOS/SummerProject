@@ -9,6 +9,7 @@
 
 package frontend.console;
 
+import static frontend.console.MainMenu.continueProgramToMain;
 import static java.lang.System.out;
 import frontend.connection.DatabaseConnection;
 import java.sql.SQLException;
@@ -36,6 +37,7 @@ public class ExecMain
             out.print("You have established the connection to the Server.\n");
             out.print("The username has been accepted.\n");
             out.print("The password has been accepted.\n");
+            continueProgramToMain();
         }//END TRY
         catch(SQLException | InstantiationException | IllegalAccessException ex)
         {

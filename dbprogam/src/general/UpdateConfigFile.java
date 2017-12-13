@@ -1,64 +1,51 @@
 /*
  * Author: Nathan van der Velde
- * Date Created: 2017-12-06
+ * Date Created: 2017-12-13
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-07
- * Description: This class handles the responsibility of reading the config file at the beginning of the
- *              program to initialise fields that are hard coded in.
+ * Date Last Modified: 2017-12-13
+ * Description: This class handles the responsibility of updating the config file as fields are changed.
  */
-
 
 package general;
 
 //IMPORTS
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.File;
 import java.util.Properties;
 import static java.lang.System.out;
 
-/* The config file is hardcoded in the sense that any modification to the file will cause the program
- * to not run and crash.*/
-public class ReadConfigFile
+public class UpdateConfigFile
 {
-    /**
-     * SUBMODULE getHostProperty
-     * DESCRIPTION: This submodule gets the hostname of the Database server from the config.properties file
-     *              and returns it to the caller.
-     * @return hostname (String)
-     */
-    public static String getHostProperty()
+    
+    public static void updatePreviousTable(String prevTable)
     {
         /// DECLERATION OF VARIABLES
-        String hostname = null;//As default
         File file = null;
         Properties prop = new Properties();
-        FileInputStream input = null;
-        
+        FileOutputStream output = null;
+    
         /// DEFINEMENT OF METHOD
         try
         {
             //Getting the non-absolute filepath for the properties file.
             file = new File(ReadConfigFile.class.getClassLoader().getResource("config.properties").getPath());
             //Starting the file Stream.
-            input = new FileInputStream(file);
-            
-            //Loading the properties file.
-            prop.load(input);
-            
+            output = new FileOutputStream(file);
+        
             //Getting the hostname from the properties file.
-            hostname = prop.getProperty("hostname");
-            
+            prop.setProperty("prevtable",prevTable);
+            prop.store(out, null);
             //Closing the FileInputStream.
-            input.close();
+            output.close();
         }//END TRY
         catch(IOException ex)
         {
-            if (input != null)
+            if (output != null)
             {
                 try
                 {
-                    input.close();
+                    output.close();
                 }//END TRY
                 catch (IOException e)
                 {
@@ -73,21 +60,14 @@ public class ReadConfigFile
             out.println("The file path for the properties file cannot be found or does not exist");
             out.println(nex.getMessage());
         }//END CATCH
-        return hostname;
-    }//END getHostProperty
+    }//END updatePreviousTable
     
-    /**
-     * SUBMODULE getPrevTable
-     * DESCRIPTION: This submodule get the current table for the previous table.
-     * @return prevTable (String)
-     */
-    public static String getPrevTable()
+    public static void updateCurrentTable(String curTable)
     {
         /// DECLERATION OF VARIABLES
-        String prevTable = null;//As default
         File file = null;
         Properties prop = new Properties();
-        FileInputStream input = null;
+        FileOutputStream output = null;
     
         /// DEFINEMENT OF METHOD
         try
@@ -95,24 +75,21 @@ public class ReadConfigFile
             //Getting the non-absolute filepath for the properties file.
             file = new File(ReadConfigFile.class.getClassLoader().getResource("config.properties").getPath());
             //Starting the file Stream.
-            input = new FileInputStream(file);
-        
-            //Loading the properties file.
-            prop.load(input);
+            output = new FileOutputStream(file);
         
             //Getting the hostname from the properties file.
-            prevTable = prop.getProperty("curTable");
-        
+            prop.setProperty("curtable",curTable);
+            prop.store(out, null);
             //Closing the FileInputStream.
-            input.close();
+            output.close();
         }//END TRY
         catch(IOException ex)
         {
-            if (input != null)
+            if (output != null)
             {
                 try
                 {
-                    input.close();
+                    output.close();
                 }//END TRY
                 catch (IOException e)
                 {
@@ -127,6 +104,5 @@ public class ReadConfigFile
             out.println("The file path for the properties file cannot be found or does not exist");
             out.println(nex.getMessage());
         }//END CATCH
-        return prevTable;
-    }//END getPrevTable
-}//END class ReadConfigFile
+    }//END updateCurTable
+}

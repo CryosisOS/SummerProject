@@ -2,7 +2,7 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-06
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-07
+ * Date Last Modified: 2017-12-13
  * Description: This source code asks the user for the relevant details.
  */
 
@@ -44,4 +44,25 @@ public class GetDetails
         password = UserInput.getString(prompt);
         return password;
     }//END getPassword
+    
+    public static String getPreviousTable()
+    {
+        /// DECLERATION OF VARIABLES
+        String prevTable;
+    
+        /// DEFINEMENT OF METHOD
+        prevTable = ReadConfigFile.getPrevTable();
+        return prevTable;
+    }//END getPreviousTable
+    
+    public static String getCurrentTable()
+    {
+        /// DECLERATION OF VARIABLES
+        String curTable;
+        String prompt = "Please enter in the name of the current months .csv file\n";
+        
+        /// DEFINEMENT OF METHOD
+        curTable = UserInput.getString(prompt);
+        return curTable;
+    }//END getCurrentTable
 }//END class GetDetails
