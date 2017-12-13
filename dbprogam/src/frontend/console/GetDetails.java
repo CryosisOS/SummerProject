@@ -51,15 +51,14 @@ public class GetDetails
         String prevTable;
     
         /// DEFINEMENT OF METHOD
-        prevTable = ReadConfigFile.getPrevTable();
+        prevTable = ReadConfigFile.getPreviousTable();
         return prevTable;
     }//END getPreviousTable
     
-    public static String getCurrentTable()
+    public static String getCurrentTable(String prompt)
     {
         /// DECLERATION OF VARIABLES
         String curTable;
-        String prompt = "Please enter in the name of the current months .csv file\n";
         
         /// DEFINEMENT OF METHOD
         curTable = UserInput.getString(prompt);
