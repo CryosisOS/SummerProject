@@ -45,17 +45,7 @@ public class GetDetails
         return password;
     }//END getPassword
     
-    public static String getPreviousTable()
-    {
-        /// DECLERATION OF VARIABLES
-        String prevTable;
-    
-        /// DEFINEMENT OF METHOD
-        prevTable = ReadConfigFile.getPreviousTable();
-        return prevTable;
-    }//END getPreviousTable
-    
-    public static String getCurrentTable(String prompt)
+    public static String getNewTable(String prompt)
     {
         /// DECLERATION OF VARIABLES
         String curTable;
@@ -64,4 +54,14 @@ public class GetDetails
         curTable = UserInput.getString(prompt);
         return curTable;
     }//END getCurrentTable
+    
+    public static String getCSVFilePath()
+    {
+        /// DECLERATION OF VARIABLES
+        String filePath;
+        
+        /// DEFINEMENT OF METHOD
+        filePath = ReadConfigFile.getCSVFilePath();
+        return filePath;
+    }//END getCSVFilePath
 }//END class GetDetails
