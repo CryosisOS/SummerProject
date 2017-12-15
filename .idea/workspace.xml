@@ -2,18 +2,13 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/dbprogam" />
-    <bookmark url="file://$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java" line="185" />
+    <bookmark url="file://$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java" line="213" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ff6f5b5-1854-40a0-9d42-9da683be62b2" name="Default" comment="Merge branch 'master' of https://github.com/GeonyosisDevelopment/database-project&#10;                                            &#10;                                            # Conflicts:&#10;                                            #&#9;dbprogam/src/frontend/connection/DatabaseConnection.java&#10;                                            #&#9;dbprogam/src/frontend/console/GetDetails.java&#10;                                            #&#9;dbprogam/src/general/ReadConfigFile.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/user.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/dbprogam/resources/config.properties" afterPath="$PROJECT_DIR$/dbprogam/resources/config.properties" />
+      <change beforePath="$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java" afterPath="$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java" />
       <change beforePath="$PROJECT_DIR$/dbprogam/src/frontend/console/GetDetails.java" afterPath="$PROJECT_DIR$/dbprogam/src/frontend/console/GetDetails.java" />
-      <change beforePath="$PROJECT_DIR$/dbprogam/src/frontend/console/MainMenu.java" afterPath="$PROJECT_DIR$/dbprogam/src/frontend/console/MainMenu.java" />
-      <change beforePath="$PROJECT_DIR$/dbprogam/src/general/ReadConfigFile.java" afterPath="$PROJECT_DIR$/dbprogam/src/general/ReadConfigFile.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +24,8 @@
           <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dbprogam/src/frontend/console/MainMenu.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="395">
-                  <caret line="68" column="4" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+                <state relative-caret-position="896">
+                  <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#3892#0" expanded="true" />
                     <element signature="imports" expanded="true" />
@@ -42,17 +37,17 @@
           <file leaf-file-name="ReadInCSV.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="857">
-                  <caret line="185" column="4" lean-forward="true" selection-start-line="185" selection-start-column="4" selection-end-line="185" selection-end-column="4" />
+                <state relative-caret-position="496">
+                  <caret line="49" column="10" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
                   <folding>
-                    <element signature="e#0#5654#0" expanded="true" />
+                    <element signature="e#0#6837#0" expanded="true" />
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1635#1636#0" expanded="true" />
-                    <element signature="e#1666#1667#0" expanded="true" />
-                    <element signature="e#1754#1755#0" expanded="true" />
-                    <element signature="e#1795#1796#0" expanded="true" />
-                    <element signature="e#1861#1862#0" expanded="true" />
-                    <element signature="e#1896#1897#0" expanded="true" />
+                    <element signature="e#2377#2378#0" expanded="true" />
+                    <element signature="e#2408#2409#0" expanded="true" />
+                    <element signature="e#2718#2719#0" expanded="true" />
+                    <element signature="e#2759#2760#0" expanded="true" />
+                    <element signature="e#3045#3046#0" expanded="true" />
+                    <element signature="e#3080#3081#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -61,8 +56,8 @@
           <file leaf-file-name="ReadConfigFile.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dbprogam/src/general/ReadConfigFile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="443">
-                  <caret line="208" column="42" lean-forward="true" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
+                <state relative-caret-position="3152">
+                  <caret line="208" column="42" lean-forward="false" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -76,7 +71,7 @@
             <entry file="file://$PROJECT_DIR$/dbprogam/resources/config.properties">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="128">
-                  <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+                  <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -85,10 +80,11 @@
           <file leaf-file-name="GetDetails.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dbprogam/src/frontend/console/GetDetails.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="921">
-                  <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+                <state relative-caret-position="785">
+                  <caret line="96" column="51" lean-forward="true" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
                   <folding>
-                    <element signature="e#0#1697#0" expanded="true" />
+                    <element signature="e#0#3004#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -138,8 +134,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/dbprogam/src/frontend/console/MainMenu.java" />
         <option value="$PROJECT_DIR$/dbprogam/resources/config.properties" />
-        <option value="$PROJECT_DIR$/dbprogam/src/frontend/console/GetDetails.java" />
         <option value="$PROJECT_DIR$/dbprogam/src/general/ReadConfigFile.java" />
+        <option value="$PROJECT_DIR$/dbprogam/src/frontend/console/GetDetails.java" />
         <option value="$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java" />
       </list>
     </option>
@@ -214,9 +210,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -536,10 +532,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-101">
           <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#7561#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -548,7 +541,8 @@
         <state relative-caret-position="596">
           <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
           <folding>
-            <element signature="e#0#1697#0" expanded="true" />
+            <element signature="e#0#3004#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -623,7 +617,8 @@
         <state relative-caret-position="596">
           <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
           <folding>
-            <element signature="e#0#1697#0" expanded="true" />
+            <element signature="e#0#3004#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -632,10 +627,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#7561#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,10 +661,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#7561#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +696,8 @@
         <state relative-caret-position="748">
           <caret line="51" column="2" lean-forward="true" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
           <folding>
-            <element signature="e#0#1697#0" expanded="true" />
+            <element signature="e#0#3004#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -723,10 +713,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#7561#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +748,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
           <folding>
-            <element signature="e#0#1697#0" expanded="true" />
+            <element signature="e#0#3004#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -838,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dbprogam/src/frontend/console/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="68" column="4" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+        <state relative-caret-position="896">
+          <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
           <folding>
             <element signature="e#0#3892#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -847,45 +835,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbprogam/resources/config.properties">
+    <entry file="file://$PROJECT_DIR$/dbprogam/src/general/ReadConfigFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="3152">
+          <caret line="208" column="42" lean-forward="false" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbprogam/src/general/ReadConfigFile.java">
+    <entry file="file://$PROJECT_DIR$/dbprogam/resources/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="208" column="42" lean-forward="true" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
+        <state relative-caret-position="128">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbprogam/src/frontend/console/GetDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="921">
-          <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        <state relative-caret-position="785">
+          <caret line="96" column="51" lean-forward="true" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
           <folding>
-            <element signature="e#0#1697#0" expanded="true" />
+            <element signature="e#0#3004#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbprogam/src/frontend/console/FileIO/ReadInCSV.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="185" column="4" lean-forward="true" selection-start-line="185" selection-start-column="4" selection-end-line="185" selection-end-column="4" />
+        <state relative-caret-position="496">
+          <caret line="49" column="10" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
           <folding>
-            <element signature="e#0#5654#0" expanded="true" />
+            <element signature="e#0#6837#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1754#1755#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
-            <element signature="e#1861#1862#0" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
+            <element signature="e#2377#2378#0" expanded="true" />
+            <element signature="e#2408#2409#0" expanded="true" />
+            <element signature="e#2718#2719#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3080#3081#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -24,6 +24,11 @@ public class ReadInCSV
     // REST OF BODY //
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
     
+    /**
+     * SUBMODULE setInFileContentsRowSize
+     * DESCRIPTION: This submodule set the number of rows the class field inFileContents to the
+     *              integer minus one that is returned when the method getNumFileLines is called.
+     */
     private void setInFileContentsRowSize()
     {
         inFileContents = new String[(getNumFileLines() - 1)][1];
@@ -36,6 +41,12 @@ public class ReadInCSV
         }//END FOR
     }//END setInFileContentsSize
     
+    /**
+     * SUBMODULE setInFileContentsColumnSize
+     * DESCRIPTION: This submodule takes an imported value and sets the number of columns of the
+     *              class field array to the number that is imported.
+     * @param numCols (Integer)
+     */
     private void setInFileContentsColumnSize(int numCols)
     {
         int rows = inFileContents.length;
@@ -50,22 +61,39 @@ public class ReadInCSV
         indexesFilled = 0;
     }//END setInFileContentsColumnSize
     
+    /**
+     * SUBMODULE incrementIndexesFilled
+     * DESCRIPTION: When this submodule is called, it increments the number of lines that are filled
+     *              in the array that is the class field inFileContents.
+     */
     private void incrementIndexesFilled()
     {
         indexesFilled++;
     }//END incrementIndexesFilled
     
+    /**
+     * SUBMODULE setNumFileLines
+     * DESCRIPTION: This submodule takes an imported integer and sets the field numFileLines to
+     *              the imported integer.
+     * @param inNumLines (Integer)
+     */
     private void setNumFileLines(int inNumLines)
     {
         numFileLines = inNumLines;
     }//END setNumFileLines
     
+    /**
+     * SUBMODULE getNumFileLines
+     * DESCRIPTION: This submodule, when called returns the value of the class field numFileLines
+     *              to the caller.
+     * @return numFileLines (Integer)
+     */
     private int getNumFileLines()
     {
         return numFileLines;
     }//END getNumFileLines
     
-    /**
+    /*
      * The files that are to be read in master be placed inside the same folder
      * and that file path needs to be placed inside the config.properties file for this project.
      */
@@ -145,7 +173,7 @@ public class ReadInCSV
             {
                 line = bufRdr.readLine();
                 processLine(line);
-            }//ENDFOR
+            }//END FOR
         }//END TRY
         catch(IOException e)
         {
@@ -177,7 +205,7 @@ public class ReadInCSV
     
     private void addLineContent(String [] inProcessedLine)
     {
-        for(int ii=0;ii<=inFileContents[0].length;ii++)
+        for(int ii=0;ii<inFileContents[0].length;ii++)
         {
             inFileContents[indexesFilled][ii] = inProcessedLine[ii];
         }//END FOR
