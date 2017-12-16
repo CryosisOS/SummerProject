@@ -86,7 +86,7 @@ public class GetDetails
      * DESCRIPTION: This submodule calls the appropriate methods to get the file path from the
      *              config.properties file that is for the directory that stores the .csv files that
      *              are to be used.
-     * @return
+     * @return filePath (String)
      */
     public static String getCSVFilePath()
     {
