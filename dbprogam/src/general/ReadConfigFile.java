@@ -184,6 +184,11 @@ public class ReadConfigFile
         return curTable;
     }//END getCurrentTable
     
+    /**
+     * SUBMODULE getCSVFilePath
+     * DESCRIPTION: This submodule returns the file path to the CSV documents to the caller.
+     * @return filePath (String)
+     */
     public static String getCSVFilePath()
     {
         /// DECLERATION OF VARIABLES
@@ -232,4 +237,113 @@ public class ReadConfigFile
         }//END CATCH
         return filePath;
     }//END getCSVFilePath
+    
+    /**
+     * SUBMODULE getCreateTableStatement
+     * DESCRIPTION: This submodule reads the sqlstatements.properties file for the
+     *              SQL Statement for creating the table.
+     * @return stmt (String)
+     */
+    public static String getCreateTableStatement()
+    {
+        /// DECLERATION OF VARIABLES
+        String stmt = null;//As default
+        File file = null;
+        Properties prop = new Properties();
+        FileInputStream input = null;
+    
+        /// DEFINEMENT OF METHOD
+        try
+        {
+            //Getting the non-absolute filepath for the properties file.
+            file = new File(ReadConfigFile.class.getClassLoader().getResource("sqlstatements.properties").getPath());
+            //Starting the file Stream.
+            input = new FileInputStream(file);
+        
+            //Loading the properties file.
+            prop.load(input);
+        
+            //Getting the hostname from the properties file.
+            stmt = prop.getProperty("createtable");
+        
+            //Closing the FileInputStream.
+            input.close();
+        }//END TRY
+        catch(IOException ex)
+        {
+            if (input != null)
+            {
+                try
+                {
+                    input.close();
+                }//END TRY
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }//END CATCH
+            }//ENDIF
+            out.println(ex.getMessage());
+            ex.printStackTrace();
+        }//END CATCH
+        catch(NullPointerException nex)
+        {
+            out.println("The file path for the properties file cannot be found or does not exist");
+            out.println(nex.getMessage());
+        }//END CATCH
+        return stmt;
+    }//END getCreateTableStatement
+    
+    /**
+     * SUBMODULE getUnits
+     * DESCRIPTION: This method returns the unit String, from the units.properties file, to the caller.
+     * @return unitString (String)
+     */
+    public static String getUnits()
+    {
+        /// DECLERATION OF VARIABLES
+        String unitString = null;//As default
+        File file = null;
+        Properties prop = new Properties();
+        FileInputStream input = null;
+    
+        /// DEFINEMENT OF METHOD
+        try
+        {
+            //Getting the non-absolute filepath for the properties file.
+            file = new File(ReadConfigFile.class.getClassLoader().getResource("units.properties").getPath());
+            //Starting the file Stream.
+            input = new FileInputStream(file);
+        
+            //Loading the properties file.
+            prop.load(input);
+        
+            //Getting the hostname from the properties file.
+            unitString = prop.getProperty("units");
+        
+            //Closing the FileInputStream.
+            input.close();
+        }//END TRY
+        catch(IOException ex)
+        {
+            if (input != null)
+            {
+                try
+                {
+                    input.close();
+                }//END TRY
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }//END CATCH
+            }//ENDIF
+            out.println(ex.getMessage());
+            ex.printStackTrace();
+        }//END CATCH
+        catch(NullPointerException nex)
+        {
+            out.println("The file path for the properties file cannot be found or does not exist");
+            out.println(nex.getMessage());
+        }//END CATCH
+        return unitString;
+    }//END getUnits
 }//END class ReadConfigFile

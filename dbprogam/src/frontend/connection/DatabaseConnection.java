@@ -20,6 +20,7 @@ public class DatabaseConnection
     private String host;
     private String un;
     private String pw;
+    private Connection conn;
     
     /*+++++++++++++++++++++++*\
     /// DEFAULT CONSTRUCTOR ///
@@ -110,9 +111,19 @@ public class DatabaseConnection
     public void establishConnection() throws IllegalAccessException, InstantiationException, SQLException
     {
         Driver.class.newInstance();
-        Connection conn= DriverManager.getConnection(host,un,pw);
+        conn= DriverManager.getConnection(host,un,pw);
     
     }//END tryConnection
+    
+    /**
+     * SUBMODULE getConn
+     * DESCRIPTION: This submodule returns the class field conn.
+     * @return conn (Connection)
+     */
+    public Connection getConn()
+    {
+        return conn;
+    }//END getConn
     
     /**
      * SUBMODULE validString
