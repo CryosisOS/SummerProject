@@ -4,9 +4,12 @@
       <w>createtable</w>
       <w>csvfilepath</w>
       <w>dbconn</w>
+      <w>dbname</w>
       <w>geonyosis</w>
       <w>initiliase</w>
+      <w>inserter</w>
       <w>maintanence</w>
+      <w>sqlstatements</w>
     </words>
   </dictionary>
 </component>

@@ -2,17 +2,18 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-05
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-07
+ * Date Last Modified: 2017-12-21
  * Description: This source code contains the main method for the console application front end of this
  *              program.
  */
 
 package frontend.console;
 
-import static frontend.console.MainMenu.continueProgramToMain;
-import static java.lang.System.out;
+//IMPORTS
 import frontend.connection.DatabaseConnection;
 import java.sql.SQLException;
+import static frontend.console.MainMenu.continueProgramToMain;
+import static java.lang.System.out;
 
 public class ExecMain
 {

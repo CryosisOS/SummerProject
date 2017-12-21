@@ -23,10 +23,14 @@ public class GetDetails
     {
         /// DECLERATION OF VARIABLES
         String hostName;
+        String dbname;
+        String finalHost;
         
         /// DEFINEMENT OF METHOD
         hostName = ReadConfigFile.getHostProperty();
-        return hostName;
+        dbname = ReadConfigFile.getDatabaseNameProperty();
+        finalHost = hostName+dbname;
+        return finalHost;
     }//END getHost
     
     /**

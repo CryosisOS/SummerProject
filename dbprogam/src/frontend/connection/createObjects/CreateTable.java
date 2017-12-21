@@ -2,7 +2,7 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-16
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-16
+ * Date Last Modified: 2017-12-21
  * Description: This source code takes care of creating tables, with specific names and everything else
  *              with it.
  */
@@ -10,16 +10,15 @@
 package frontend.connection.createObjects;
 
 //IMPORTS
-
 import frontend.connection.DatabaseConnection;
 import general.ReadConfigFile;
-import java.sql.Connection;
+import general.ReadUnitsFile;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static general.ReadConfigFile.getCreateTableStatement;
+import static general.ReadSQLStatementsFile.getCreateTableStatement;
 
-public class CreateTable
+public class CreateTable extends ObjectConnection
 {
     //PRIVATE STATIC FIELDS
     private static final String varchar = " ? VARCHAR (5) NOT NULL,";
@@ -29,8 +28,6 @@ public class CreateTable
     //CLASS FIELDS
     private String tableName;
     private String [] unitArr;
-    private DatabaseConnection dbconn;
-    private Connection con;
     
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
     // REST OF BODY //
@@ -41,12 +38,29 @@ public class CreateTable
      * DESCRIPTION: This submodule is the alternate constructor.
      * @param inDbconn (DatabaseConnection)
      */
-    public CreateTable(DatabaseConnection inDbconn)
+    public CreateTable(DatabaseConnection inDbconn) throws SQLException
     {
-        dbconn = inDbconn;
-        setTableName();
+        super(inDbconn);
+        this.setTableName();
+        this.setUnitArr();
+        try
+        {
+            this.createNewStringDatabaseTable();
+            this.createNewDateDatabaseTable();
+            this.createNewPercentDatabaseTable();
+        }//END TRY
+        catch(SQLException sqlex)
+        {
+            throw sqlex;
+        }//END CATCH
+        
     }//END ALTERNATE CONSTRUCTOR
     
+    /**
+     * SUBMODULE setTableName
+     * DESCRIPTION: This submodule sets the table name by calling the method that reads the config
+     *              file.
+     */
     public void setTableName()
     {
         tableName = ReadConfigFile.getCurrentTable();
@@ -62,7 +76,7 @@ public class CreateTable
         String unitString;
         
         /// DEFINEMENT OF METHOD
-        unitString = ReadConfigFile.getUnits();
+        unitString = ReadUnitsFile.getUnits();
         unitArr = unitString.split(",");
     }//END setUnitArr
     
@@ -85,7 +99,7 @@ public class CreateTable
         String finalStatement;
         
         /// DEFINEMENT OF METHOD
-        setUpConnection();
+        super.setUpConnection();
         setTableName();
         for(int ii=0; ii<unitArr.length;ii++)
         {
@@ -95,7 +109,7 @@ public class CreateTable
         {
             finalStatement = getCreateTableStatement();
             finalStatement  = finalStatement + unitDec;
-            PreparedStatement createTable = con.prepareStatement(finalStatement);
+            PreparedStatement createTable = getCon().prepareStatement(finalStatement);
             createTable.setString(1, tableName);
             for(int ii=0;ii<unitArr.length;ii++)
             {
@@ -135,7 +149,7 @@ public class CreateTable
         {
             finalStatement = getCreateTableStatement();
             finalStatement  = finalStatement + unitDec;
-            PreparedStatement createTable = con.prepareStatement(finalStatement);
+            PreparedStatement createTable = getCon().prepareStatement(finalStatement);
             createTable.setString(1, tableName);
             for(int ii=0;ii<unitArr.length;ii++)
             {
@@ -161,8 +175,9 @@ public class CreateTable
     {
         /// DECLERATION OF VARIABLES
         int stmtIndex = 0;
-        String unitDec = "";
+        String unitDec = " ?";
         String finalStatement;
+        PreparedStatement createTable;
         
         /// DEFINEMENT OF METHOD
         setUpConnection();
@@ -175,7 +190,7 @@ public class CreateTable
         {
             finalStatement = getCreateTableStatement();
             finalStatement  = finalStatement + unitDec;
-            PreparedStatement createTable = con.prepareStatement(finalStatement);
+            createTable = getCon().prepareStatement(finalStatement);
             createTable.setString(1, tableName);
             for(int ii=0;ii<unitArr.length;ii++)
             {
@@ -189,18 +204,4 @@ public class CreateTable
             throw sqlex;
         }//END CATCH
     }//END createNewPercentDatabaseTable
-    
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-    // PUBLIC DOING METHODS //
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-    
-    /**
-     * SUBMODULE setUpConnection
-     * DESCRIPTION: This submodule sets up the class field con from the Object dbconn.
-     */
-    private void setUpConnection()
-    {
-        con = dbconn.getConn();
-    }//END setUpConnection
-    
 }//END class CreateTable

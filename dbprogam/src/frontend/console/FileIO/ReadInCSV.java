@@ -62,6 +62,22 @@ public class ReadInCSV
         indexesFilled = 0;
     }//END setInFileContentsColumnSize
     
+    public String[][] getInFileContents()
+    {
+        /// DECLERATION OF VARIABLES
+        String[][] copyArr = new String[inFileContents.length][inFileContents[0].length];
+        
+        /// DEFINEMENT OF METHOD
+        for(int ii=0;ii<inFileContents.length;ii++)
+        {
+            for(int jj=0;jj<inFileContents[0].length;jj++)
+            {
+                copyArr[ii][jj] = inFileContents[ii][jj];
+            }//ENDFOR
+        }//ENDFOR
+        return copyArr;
+    }//END getInFileContents
+    
     /**
      * SUBMODULE incrementIndexesFilled
      * DESCRIPTION: When this submodule is called, it increments the number of lines that are filled
