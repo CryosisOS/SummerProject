@@ -2,7 +2,7 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-06
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-13
+ * Date Last Modified: 2017-12-26
  * Description: This class handles the responsibility of reading the config file at the beginning of the
  *              program to initialise fields that are hard coded in.
  */
@@ -156,7 +156,7 @@ public class ReadConfigFile
             prop.load(input);
             
             //Getting the hostname from the properties file.
-            prevTable = prop.getProperty("prevtable");
+            prevTable = prop.getProperty("prevstringtable");
             
             //Closing the FileInputStream.
             input.close();
@@ -210,7 +210,7 @@ public class ReadConfigFile
             prop.load(input);
         
             //Getting the hostname from the properties file.
-            curTable = prop.getProperty("curtable");
+            curTable = prop.getProperty("curstringtable");
         
             //Closing the FileInputStream.
             input.close();

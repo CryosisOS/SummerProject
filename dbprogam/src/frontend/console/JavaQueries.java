@@ -9,9 +9,12 @@
 
 package frontend.console;
 
+//IMPORTS
+import frontend.connection.DatabaseConnection;
+
 public class JavaQueries
 {
-    public static void continueToQueries()
+    public static void continueToQueries(DatabaseConnection inDbconn)
     {
         /* Under Development */
         System.out.println("Got here successfully.");

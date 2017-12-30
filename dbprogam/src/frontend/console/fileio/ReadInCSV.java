@@ -2,13 +2,13 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-14
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-14
+ * Date Last Modified: 2017-12-26
  * Description: This source code takes care of reading in the CSV file and separating it into
  *              a string array that will be a class field for this Object.
  */
 
 //IMPORTS
-package frontend.console.FileIO;
+package frontend.console.fileio;
 
 //IMPORTS
 import java.io.*;
@@ -152,7 +152,7 @@ public class ReadInCSV
         }//END TRY
         catch(IOException e)
         {
-            throw new IOException();
+            throw e;
         }//END CATCH
     }//END readFileNumLines
     
@@ -194,7 +194,7 @@ public class ReadInCSV
         }//END TRY
         catch(IOException e)
         {
-            throw new IOException();
+            throw e;
         }//END CATCH
         
     }//END readInFileLines

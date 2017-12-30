@@ -2,7 +2,7 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-25
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-25
+ * Date Last Modified: 2017-12-26
  * Description: This class has the responsibility of checking if two tables are the same.
  *              In the number of columns and the same column names.
  */

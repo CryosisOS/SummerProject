@@ -180,4 +180,53 @@ public class ReadSQLStatementsFile
         }//END CATCH
         return stmt;
     }//END getTableViewStatement
+    
+    public static String getTableList()
+    {
+        /// DECLERATION OF VARIABLES
+        String stmt = null;//As default
+        File file = null;
+        Properties prop = new Properties();
+        FileInputStream input = null;
+        
+        /// DEFINEMENT OF METHOD
+        try
+        {
+            //Getting the non-absolute filepath for the properties file.
+            file = new File(ReadConfigFile.class.getClassLoader().getResource("sqlstatements.properties").getPath());
+            //Starting the file Stream.
+            input = new FileInputStream(file);
+            
+            //Loading the properties file.
+            prop.load(input);
+            
+            //Getting the hostname from the properties file.
+            stmt = prop.getProperty("tablelist");
+            
+            //Closing the FileInputStream.
+            input.close();
+        }//END TRY
+        catch(IOException ex)
+        {
+            if (input != null)
+            {
+                try
+                {
+                    input.close();
+                }//END TRY
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }//END CATCH
+            }//ENDIF
+            out.println(ex.getMessage());
+            ex.printStackTrace();
+        }//END CATCH
+        catch(NullPointerException nex)
+        {
+            out.println("The file path for the properties file cannot be found or does not exist");
+            out.println(nex.getMessage());
+        }//END CATCH
+        return stmt;
+    }//END getTableList
 }//END class ReadSQLStatementsFile

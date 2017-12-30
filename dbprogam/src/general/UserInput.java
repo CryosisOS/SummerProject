@@ -2,7 +2,7 @@
  * Author: Nathan van der Velde
  * Date Created: 2017-12-05
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2017-12-07
+ * Date Last Modified: 2017-12-26
  * Description: This source code is part of the general package to be used throughout the program.
  *              This particular piece of code is for UserInput. It handles all input that is needed
  *              from the user via the keyboard.
@@ -44,6 +44,8 @@ public class UserInput
             catch(InputMismatchException im)
             {
                 out.print("This is not an integer please try again.\n");
+                sc.reset();
+                sc.nextInt();
             }
         }while(!isValid);
         return userInput;

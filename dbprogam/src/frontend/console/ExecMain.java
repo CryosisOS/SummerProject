@@ -38,7 +38,7 @@ public class ExecMain
             out.print("You have established the connection to the Server.\n");
             out.print("The username has been accepted.\n");
             out.print("The password has been accepted.\n\n\n");
-            continueProgramToMain();
+            continueProgramToMain(dbconn);
         }//END TRY
         catch(SQLException | InstantiationException | IllegalAccessException ex)
         {
