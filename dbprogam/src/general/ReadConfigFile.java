@@ -21,6 +21,8 @@ import static java.lang.System.out;
  * to not run and crash.*/
 public class ReadConfigFile
 {
+    static final Properties prop = new Properties();
+
     /**
      * SUBMODULE getHostProperty
      * DESCRIPTION: This submodule gets the hostname of the Database server from the config.properties file
@@ -32,7 +34,6 @@ public class ReadConfigFile
         /// DECLERATION OF VARIABLES
         String hostname = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD
@@ -87,7 +88,6 @@ public class ReadConfigFile
         /// DECLERATION OF VARIABLES
         String dbname = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD
@@ -141,7 +141,6 @@ public class ReadConfigFile
         /// DECLERATION OF VARIABLES
         String prevTable = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD
@@ -195,7 +194,6 @@ public class ReadConfigFile
         /// DECLERATION OF VARIABLES
         String curTable = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
     
         /// DEFINEMENT OF METHOD
@@ -249,7 +247,6 @@ public class ReadConfigFile
         /// DECLERATION OF VARIABLES
         String filePath = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
     
         /// DEFINEMENT OF METHOD

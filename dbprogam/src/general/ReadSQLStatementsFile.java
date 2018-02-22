@@ -16,6 +16,8 @@ import static java.lang.System.out;
 
 public class ReadSQLStatementsFile
 {
+    static final Properties prop = new Properties();
+
     /**
      * SUBMODULE getCreateTableStatement
      * DESCRIPTION: This submodule reads the sqlstatements.properties file for the
@@ -27,7 +29,6 @@ public class ReadSQLStatementsFile
         /// DECLERATION OF VARIABLES
         String stmt = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD
@@ -82,7 +83,6 @@ public class ReadSQLStatementsFile
         /// DECLERATION OF VARIABLES
         String stmt = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD
@@ -137,7 +137,6 @@ public class ReadSQLStatementsFile
         /// DECLERATION OF VARIABLES
         String stmt = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD
@@ -186,7 +185,6 @@ public class ReadSQLStatementsFile
         /// DECLERATION OF VARIABLES
         String stmt = null;//As default
         File file = null;
-        Properties prop = new Properties();
         FileInputStream input = null;
         
         /// DEFINEMENT OF METHOD

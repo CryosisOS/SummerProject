@@ -165,8 +165,8 @@ public class ReadInCSV
     public void readInFileLines(String fileName) throws IOException
     {
         /// DECLERATION OF VARIABLES
-        int lineNum;
         String line;
+        //SOMEWHERE IN THE getCSVFilePath Method it is returning null.
         String wholeFilePath = ReadConfigFile.getCSVFilePath()+fileName;
         FileInputStream fileStream = null;
         InputStreamReader rdr;
@@ -182,14 +182,15 @@ public class ReadInCSV
             fileStream = new FileInputStream(wholeFilePath);
             rdr = new InputStreamReader(fileStream);
             bufRdr = new BufferedReader(rdr);
-            
-            lineNum = 0;
-            line = bufRdr.readLine();
-            lineNum++;
-            for(int ii=lineNum;ii<=getNumFileLines();ii++)
+
+            line = bufRdr.readLine();//Skip the firstLine
+            for(int ii=0;ii<getNumFileLines();ii++)
             {
                 line = bufRdr.readLine();
-                processLine(line);
+                if(line != null)
+                {
+                    processLine(line);
+                }//ENDIF
             }//END FOR
         }//END TRY
         catch(IOException e)

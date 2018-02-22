@@ -28,6 +28,7 @@ public abstract class ObjectConnection
     public ObjectConnection(DatabaseConnection inDbconn)
     {
         dbconn = inDbconn;
+        con = inDbconn.getConn();
     }//END ALTERNATE CONSTRUCTOR
     
     /**

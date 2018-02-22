@@ -71,12 +71,16 @@ public class ValueInserter extends ObjectConnection
         String stmt;
         StringBuilder finalString = null;
         PreparedStatement prepStmt;
-        Statement commStmt = getCon().createStatement();
-        
+        Statement commStmt = super.getCon().createStatement();
         
         /// DEFINEMENT OF METHOD
         stmt = ReadSQLStatementsFile.getInsertStatement();
-        tableName = ReadConfigFile.getCurrentTable();
+        //==========================================================================================
+        //URGENT!!!!!!!! PAY ATTENTION TO BELOW THIS IS WHAT I NEED TO FIX NOW
+        tableName = ReadConfigFile.getCurrentTable();/**I need to import the table name into the method
+        instead of calling it here. This could possible solve the table name being returned
+        as null when the method is called. It also stop the same table being called both times.*/
+        //==========================================================================================
         for(int ii=0;ii<arrToInsert.length;ii++)
         {
             values = values + "(";

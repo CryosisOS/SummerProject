@@ -92,8 +92,8 @@ public class MainMenu
         /// DECLERATION OF VARIABLES
         int option;
         boolean isNotValid;
-        String prompt = "\nWhich option would you like?\n1.Work with current tables.\n2.Current Table.\n"+
-                        "3.Work with two new tables.\n\nPlease input the number of the option: ";
+        String prompt = "\nWhich option would you like?\n1. Work with current tables.\n2. Current Table.\n"+
+                        "3. Work with two new tables.\n\nPlease input the number of the option: ";
         String prevTable;
         String curTable;
         
@@ -234,7 +234,6 @@ public class MainMenu
         try
         {
             ReadInCSV prevFile = new ReadInCSV();
-            System.out.println(table);//FOR TESTING !!!
             prevFile.readInFileLines(table);
             insertContents = new ValueInserter(inDbconn, prevFile.getInFileContents());
             insertContents.insertValues();
