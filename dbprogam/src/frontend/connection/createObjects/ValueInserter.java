@@ -62,11 +62,10 @@ public class ValueInserter extends ObjectConnection
      *              into a single string an executes a SQL statement with it.
      * @throws SQLException (Exception)
      */
-    public void insertValues() throws SQLException
+    public void insertValues(String tableName) throws SQLException
     {
         /// DECLERATION OF VARIABLES
         int stringLength;
-        String tableName;
         String values = "";
         String stmt;
         StringBuilder finalString = null;
@@ -75,12 +74,6 @@ public class ValueInserter extends ObjectConnection
         
         /// DEFINEMENT OF METHOD
         stmt = ReadSQLStatementsFile.getInsertStatement();
-        //==========================================================================================
-        //URGENT!!!!!!!! PAY ATTENTION TO BELOW THIS IS WHAT I NEED TO FIX NOW
-        tableName = ReadConfigFile.getCurrentTable();/**I need to import the table name into the method
-        instead of calling it here. This could possible solve the table name being returned
-        as null when the method is called. It also stop the same table being called both times.*/
-        //==========================================================================================
         for(int ii=0;ii<arrToInsert.length;ii++)
         {
             values = values + "(";

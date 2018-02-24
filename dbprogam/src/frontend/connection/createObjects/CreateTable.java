@@ -23,7 +23,7 @@ public class CreateTable extends ObjectConnection
     //PRIVATE STATIC FIELDS
     private static final String varchar = " ? VARCHAR (5) NOT NULL,";
     private static final String date = " ? CHAR (10) NOT NULL,";
-    private static final String percent = " ? VARCHAR (4) NOT NULL,";
+    private static final String percent = " ? VARCHAR (6) NOT NULL,";
     
     //CLASS FIELDS
     private String tableName;

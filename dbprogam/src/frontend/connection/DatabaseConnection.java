@@ -9,10 +9,14 @@
 package frontend.connection;
 
 //IMPORTS
+import com.mysql.jdbc.Driver;
+import general.ReadConfigFile;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import com.mysql.jdbc.Driver;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DatabaseConnection
 {
@@ -110,9 +114,24 @@ public class DatabaseConnection
      */
     public void establishConnection() throws IllegalAccessException, InstantiationException, SQLException
     {
-        Driver.class.newInstance();
-        conn= DriverManager.getConnection(host,un,pw);
-    
+        /// DECLARATION OF VARIABLES
+        String stmt;
+        Statement useDBase = getConn().createStatement();
+        PreparedStatement prepStmt;
+
+        /// DEFINEMENT OF METHOD
+        try
+        {
+            Driver.class.newInstance();
+            conn= DriverManager.getConnection(host,un,pw);
+            stmt = "use "+ReadConfigFile.getDatabaseNameProperty();
+            prepStmt = getConn().prepareStatement(stmt);
+            prepStmt.executeUpdate();
+        }//END TRY
+        catch(Exception ex)
+        {
+            throw ex;
+        }//END CATCH
     }//END tryConnection
     
     /**

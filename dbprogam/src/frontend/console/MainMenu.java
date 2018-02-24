@@ -233,10 +233,10 @@ public class MainMenu
         /// DEFINEMENT OF METHOD
         try
         {
-            ReadInCSV prevFile = new ReadInCSV();
-            prevFile.readInFileLines(table);
-            insertContents = new ValueInserter(inDbconn, prevFile.getInFileContents());
-            insertContents.insertValues();
+            ReadInCSV file = new ReadInCSV();
+            file.readInFileLines(table);
+            insertContents = new ValueInserter(inDbconn, file.getInFileContents());
+            insertContents.insertValues(table);
         }//END TRY
         catch(IOException ioex)
         {
