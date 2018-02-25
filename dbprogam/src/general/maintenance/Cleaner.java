@@ -11,7 +11,7 @@ public class Cleaner
     public static String cleanFileExtension(String inFilename)
     {
         String outFilename;
-        String [] split = inFilename.split(".");
+        String [] split = inFilename.split("\\.");
         outFilename = split[0];
         return outFilename;
     }//END cleanFileExtensions

@@ -16,6 +16,7 @@ public class CorrectTableType
 {
     private static CorrectTableType instance = null;
     private String tableType;
+    private static String TABLE_TYPE;
     
     /*+++++++++++++++++++++*\
      * DEFAULT CONSTRUCTOR *
@@ -30,6 +31,7 @@ public class CorrectTableType
         if(inType.equals("STRING")||inType.equals("PERCENTAGE")||inType.equals("DATE"))
         {
             tableType = inType;
+            TABLE_TYPE = tableType;
         }
         else
         {
@@ -42,11 +44,12 @@ public class CorrectTableType
         if(instance == null)
         {
             instance = new CorrectTableType();
+            instance.setTableType(TABLE_TYPE);
         }
         return instance;
     }//END getInstance
     
-    private String getTableType()
+    public String getTableType()
     {
         return tableType;
     }//END getTableType

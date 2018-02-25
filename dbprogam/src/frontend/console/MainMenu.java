@@ -11,6 +11,7 @@ package frontend.console;
 
 //IMPORTS
 import frontend.connection.DatabaseConnection;
+import frontend.connection.createObjects.CreateTable;
 import frontend.connection.createObjects.ValueInserter;
 import frontend.connection.validation.CheckExisting;
 import frontend.console.fileio.ReadInCSV;
@@ -154,7 +155,7 @@ public class MainMenu
         UpdateConfigFile.updatePreviousTable(prevTable);//This sets the previous table property to the 'current' table
         curTable = GetDetails.getNewTable(prompt);//This asks for the name of the now 'current' table.
         UpdateConfigFile.updateCurrentTable(curTable);//This sets the current table property to the 'current' table
-        /* At this point we need to check that the table that they are imported is not already in the
+        /* At this point we need to check that the table that they is imported is not already in the
          * database. If it is, we will go to the first option... By passing the rest of the code
          * in this method.
          */
@@ -216,7 +217,7 @@ public class MainMenu
             }
             continueToQueries(inDbconn);
         }while(repeat);//END DO-WHILE
-    }//END updateBothTables()
+    }//END updateBothTables
     
     /**
      * SUBMODULE readFileIntoDatabase
@@ -229,6 +230,7 @@ public class MainMenu
     {
         /// DECLERATION OF VARIABLES
         ValueInserter insertContents = null;
+        CreateTable tableCreator = null;
         
         /// DEFINEMENT OF METHOD
         try
@@ -236,6 +238,7 @@ public class MainMenu
             ReadInCSV file = new ReadInCSV();
             file.readInFileLines(table);
             insertContents = new ValueInserter(inDbconn, file.getInFileContents());
+            tableCreator = new CreateTable(inDbconn, table);
             insertContents.insertValues(table);
         }//END TRY
         catch(IOException ioex)

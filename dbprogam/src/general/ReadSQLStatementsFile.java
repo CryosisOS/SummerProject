@@ -16,7 +16,7 @@ import static java.lang.System.out;
 
 public class ReadSQLStatementsFile
 {
-    static final Properties prop = new Properties();
+    private static final Properties prop = new Properties();
 
     /**
      * SUBMODULE getCreateTableStatement

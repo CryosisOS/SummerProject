@@ -21,7 +21,7 @@ import static java.lang.System.out;
  * to not run and crash.*/
 public class ReadConfigFile
 {
-    static final Properties prop = new Properties();
+    private static final Properties prop = new Properties();
 
     /**
      * SUBMODULE getHostProperty

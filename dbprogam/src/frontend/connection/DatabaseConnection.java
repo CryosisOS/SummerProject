@@ -116,7 +116,6 @@ public class DatabaseConnection
     {
         /// DECLARATION OF VARIABLES
         String stmt;
-        Statement useDBase = getConn().createStatement();
         PreparedStatement prepStmt;
 
         /// DEFINEMENT OF METHOD

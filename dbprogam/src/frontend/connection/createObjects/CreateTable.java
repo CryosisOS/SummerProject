@@ -13,6 +13,9 @@ package frontend.connection.createObjects;
 import frontend.connection.DatabaseConnection;
 import general.ReadConfigFile;
 import general.ReadUnitsFile;
+import general.maintenance.Cleaner;
+import general.validation.CorrectTableType;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -38,16 +41,27 @@ public class CreateTable extends ObjectConnection
      * DESCRIPTION: This submodule is the alternate constructor.
      * @param inDbconn (DatabaseConnection)
      */
-    public CreateTable(DatabaseConnection inDbconn) throws SQLException
+    public CreateTable(DatabaseConnection inDbconn, String inTablename) throws SQLException
     {
         super(inDbconn);
-        this.setTableName();
+        this.setTableName(inTablename);
         this.setUnitArr();
         try
         {
-            this.createNewStringDatabaseTable();
-            this.createNewDateDatabaseTable();
-            this.createNewPercentDatabaseTable();
+            /* The reason that there is not else statement at the bottom is that the singleton class
+             * should've been set at the beginning of the program. */
+            if(CorrectTableType.getInstance().getTableType().equals("STRING"))
+            {
+                this.createNewStringDatabaseTable();
+            }
+            else if(CorrectTableType.getInstance().getTableType().equals("DATE"))
+            {
+                this.createNewDateDatabaseTable();
+            }
+            else if(CorrectTableType.getInstance().getTableType().equals("PERCENTAGE"))
+            {
+                this.createNewPercentDatabaseTable();
+            }//END IF
         }//END TRY
         catch(SQLException sqlex)
         {
@@ -61,9 +75,9 @@ public class CreateTable extends ObjectConnection
      * DESCRIPTION: This submodule sets the table name by calling the method that reads the config
      *              file.
      */
-    public void setTableName()
+    public void setTableName(String inTablename)
     {
-        tableName = ReadConfigFile.getCurrentTable();
+        tableName = Cleaner.cleanFileExtension(inTablename);
     }//END setTableName
     
     /**
@@ -100,7 +114,7 @@ public class CreateTable extends ObjectConnection
         
         /// DEFINEMENT OF METHOD
         super.setUpConnection();
-        setTableName();
+        setTableName(tableName);
         for(int ii=0; ii<unitArr.length;ii++)
         {
             unitDec = unitDec+varchar;
@@ -140,7 +154,7 @@ public class CreateTable extends ObjectConnection
         
         /// DEFINEMENT OF METHOD
         setUpConnection();
-        setTableName();
+        setTableName(tableName);
         for(int ii=0; ii<unitArr.length;ii++)
         {
             unitDec = unitDec+date;
@@ -181,7 +195,7 @@ public class CreateTable extends ObjectConnection
         
         /// DEFINEMENT OF METHOD
         setUpConnection();
-        setTableName();
+        setTableName(tableName);
         for(int ii=0; ii<unitArr.length;ii++)
         {
             unitDec = unitDec+percent;
